@@ -1,0 +1,9 @@
+# Default owner for everything
+* @danielvogler
+
+# Skill domains — add domain experts here as the contributor base grows
+.claude/skills/gcp-*         @danielvogler
+.claude/skills/gitlab-*      @danielvogler
+.claude/skills/python-*      @danielvogler
+.claude/skills/uv-*          @danielvogler
+profiles/                    @danielvogler

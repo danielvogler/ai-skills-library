@@ -1,0 +1,53 @@
+name: Validate Skills
+
+on:
+  push:
+    paths:
+      - ".claude/skills/**"
+  pull_request:
+    paths:
+      - ".claude/skills/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pipx
+        run: pip install --quiet pipx
+
+      - name: Find changed skill directories
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+          else
+            BASE="HEAD~1"
+          fi
+          git diff --name-only "${BASE}...HEAD" \
+            | grep '^\.claude/skills/' \
+            | sed 's|^\.claude/skills/||' \
+            | cut -d'/' -f1 \
+            | sort -u > /tmp/changed_skills.txt
+          echo "Changed skills:"
+          cat /tmp/changed_skills.txt
+
+      - name: Validate each changed skill
+        run: |
+          failed=0
+          while IFS= read -r skill; do
+            [ -z "$skill" ] && continue
+            echo "::group::Validating $skill"
+            pipx run \
+              --spec "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref" \
+              skills-ref validate ".claude/skills/$skill" || failed=1
+            echo "::endgroup::"
+          done < /tmp/changed_skills.txt
+          exit $failed

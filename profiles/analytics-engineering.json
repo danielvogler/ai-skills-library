@@ -1,0 +1,22 @@
+{
+  "name": "analytics-engineering",
+  "description": "Skills for dbt, BigQuery, and BI tooling teams.",
+  "skills": [
+    "running-dbt-commands",
+    "adding-dbt-unit-test",
+    "building-dbt-semantic-layer",
+    "using-dbt-for-analytics-engineering",
+    "using-dbt-index",
+    "fetching-dbt-docs",
+    "troubleshooting-dbt-job-errors",
+    "working-with-dbt-mesh",
+    "migrating-dbt-core-to-fusion",
+    "migrating-dbt-project-across-platforms",
+    "creating-mermaid-dbt-dag",
+    "answering-natural-language-questions-with-dbt",
+    "configuring-dbt-mcp-server",
+    "github",
+    "github-actions",
+    "karpathy-guidelines"
+  ]
+}

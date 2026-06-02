@@ -1,0 +1,48 @@
+name: Check Profiles
+
+on:
+  push:
+    paths:
+      - "profiles/**"
+      - ".claude/skills/**"
+      - "skills-lock.json"
+  pull_request:
+    paths:
+      - "profiles/**"
+      - ".claude/skills/**"
+      - "skills-lock.json"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify all profile skill references exist
+        run: |
+          failed=0
+          for profile in profiles/*.json; do
+            echo "Checking $profile..."
+            while IFS= read -r skill; do
+              if [ ! -d ".claude/skills/$skill" ]; then
+                echo "::error file=$profile::Skill '$skill' not found in .claude/skills/"
+                failed=1
+              fi
+            done < <(jq -r '.skills[]' "$profile")
+          done
+          exit $failed
+
+      - name: Check full-stack profile is complete
+        run: |
+          all_skills=$(ls .claude/skills/)
+          fullstack_skills=$(jq -r '.skills[]' profiles/full-stack.json)
+          missing=0
+          for skill in $all_skills; do
+            if ! echo "$fullstack_skills" | grep -q "^${skill}$"; then
+              echo "::warning::Skill '$skill' is missing from profiles/full-stack.json"
+              missing=1
+            fi
+          done
+          if [ $missing -eq 1 ]; then
+            echo "Update full-stack.json to include all skills."
+          fi

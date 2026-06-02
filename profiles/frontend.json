@@ -1,0 +1,12 @@
+{
+  "name": "frontend",
+  "description": "Skills for React Native and mobile frontend teams.",
+  "skills": [
+    "react-native-best-practices",
+    "react-native-brownfield-migration",
+    "upgrading-react-native",
+    "github",
+    "github-actions",
+    "karpathy-guidelines"
+  ]
+}

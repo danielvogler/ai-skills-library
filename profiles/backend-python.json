@@ -1,0 +1,9 @@
+{
+  "name": "backend-python",
+  "description": "Skills for Python backend teams. Note: uv, ruff, pre-commit, and GitLab CI skills are planned — add them when npx skills add has official upstreams available.",
+  "skills": [
+    "github",
+    "github-actions",
+    "karpathy-guidelines"
+  ]
+}

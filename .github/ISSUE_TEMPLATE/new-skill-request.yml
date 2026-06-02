@@ -1,0 +1,62 @@
+name: New Skill Request
+description: Propose a new skill or upstream source to add to this library
+labels: ["skill-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, check [skills.sh](https://skills.sh/) and run `npx skills add danielvogler/ai-skills-library --list` to confirm the skill doesn't already exist.
+
+  - type: input
+    id: skill-name
+    attributes:
+      label: Proposed skill name
+      description: kebab-case, e.g. `gcp-bigquery` or `uv-python-manager`
+      placeholder: my-new-skill
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source-type
+    attributes:
+      label: Source
+      description: Where would this skill come from?
+      options:
+        - Existing upstream GitHub repo (npx skills add)
+        - New upstream repo not yet in this library
+        - Needs to be authored locally (no upstream exists)
+    validations:
+      required: true
+
+  - type: input
+    id: upstream-repo
+    attributes:
+      label: Upstream repo (if applicable)
+      description: GitHub `owner/repo` where the skill lives
+      placeholder: some-org/agent-skills
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What does this skill do?
+      description: Describe the skill's purpose and exactly when an agent should invoke it. One clear sentence minimum.
+    validations:
+      required: true
+
+  - type: textarea
+    id: teams
+    attributes:
+      label: Which team profile(s) would benefit?
+      description: "e.g. analytics-engineering, platform-engineering, ml-platform"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I confirmed this skill does not already exist in the library
+          required: true
+        - label: The upstream license is permissive (MIT, Apache-2.0, MPL-2.0) or this is an original contribution
+          required: true

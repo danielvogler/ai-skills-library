@@ -1,0 +1,15 @@
+{
+  "name": "ml-platform",
+  "description": "Skills for ML engineering, model development, and AI infrastructure teams.",
+  "skills": [
+    "gemini-api-dev",
+    "gemini-interactions-api",
+    "gemini-live-api-dev",
+    "deep-agents-core",
+    "deep-agents-memory",
+    "deep-agents-orchestration",
+    "github-actions",
+    "github",
+    "karpathy-guidelines"
+  ]
+}
