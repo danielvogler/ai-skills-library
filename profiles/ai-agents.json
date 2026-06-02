@@ -1,0 +1,25 @@
+{
+  "name": "ai-agents",
+  "description": "Skills for teams building AI agents, autonomous workflows, and LLM-powered applications.",
+  "skills": [
+    "deep-agents-core",
+    "deep-agents-memory",
+    "deep-agents-orchestration",
+    "gemini-api-dev",
+    "gemini-interactions-api",
+    "gemini-live-api-dev",
+    "karpathy-guidelines",
+    "github",
+    "github-actions",
+    "context-engineering",
+    "spec-driven-development",
+    "debugging-and-error-recovery",
+    "planning-and-task-breakdown",
+    "using-agent-skills",
+    "adk-agent-builder",
+    "adk-architecture",
+    "adk-debug",
+    "adk-setup",
+    "codex-pr-body"
+  ]
+}

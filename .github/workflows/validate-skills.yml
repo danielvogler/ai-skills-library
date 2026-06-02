@@ -1,0 +1,68 @@
+name: Validate Skills
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".claude/skills/**"
+  pull_request:
+    paths:
+      - ".claude/skills/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pipx
+        run: pip install --quiet pipx
+
+      - name: Find skill directories to validate
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            find .claude/skills -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort > /tmp/changed_skills.txt
+            echo "Manual trigger — validating all skills:"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+            git diff --name-only "${BASE}...HEAD" \
+              | grep '^\.claude/skills/' \
+              | sed 's|^\.claude/skills/||' \
+              | cut -d'/' -f1 \
+              | sort -u > /tmp/changed_skills.txt
+            echo "Changed skills:"
+          else
+            git diff --name-only "HEAD~1...HEAD" \
+              | grep '^\.claude/skills/' \
+              | sed 's|^\.claude/skills/||' \
+              | cut -d'/' -f1 \
+              | sort -u > /tmp/changed_skills.txt
+            echo "Changed skills:"
+          fi
+          cat /tmp/changed_skills.txt
+
+      - name: Validate each changed skill
+        run: |
+          failed=0
+          while IFS= read -r skill; do
+            [ -z "$skill" ] && continue
+            # Skip upstream skills — they are symlinks into .agents/skills/ and
+            # may use non-standard frontmatter we cannot modify.
+            if [ -L ".claude/skills/$skill" ]; then
+              echo "Skipping $skill (upstream symlink — not locally authored)"
+              continue
+            fi
+            echo "::group::Validating $skill"
+            pipx run \
+              --spec "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref" \
+              skills-ref validate ".claude/skills/$skill" || failed=1
+            echo "::endgroup::"
+          done < /tmp/changed_skills.txt
+          exit $failed

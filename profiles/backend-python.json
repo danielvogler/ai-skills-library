@@ -1,0 +1,21 @@
+{
+  "name": "backend-python",
+  "description": "Skills for Python backend teams. Note: uv, ruff, pre-commit, and GitLab CI skills are planned \u2014 add them when npx skills add has official upstreams available.",
+  "skills": [
+    "github",
+    "github-actions",
+    "karpathy-guidelines",
+    "test-driven-development",
+    "spec-driven-development",
+    "code-review-and-quality",
+    "debugging-and-error-recovery",
+    "ci-cd-and-automation",
+    "security-and-hardening",
+    "documentation-and-adrs",
+    "api-and-interface-design",
+    "git-workflow-and-versioning",
+    "code-review",
+    "code-review-testing",
+    "code-review-change-size"
+  ]
+}

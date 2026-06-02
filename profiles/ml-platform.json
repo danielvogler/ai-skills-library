@@ -1,0 +1,25 @@
+{
+  "name": "ml-platform",
+  "description": "Skills for ML engineering, model development, and AI infrastructure teams.",
+  "skills": [
+    "gemini-api-dev",
+    "gemini-interactions-api",
+    "gemini-live-api-dev",
+    "deep-agents-core",
+    "deep-agents-memory",
+    "deep-agents-orchestration",
+    "github-actions",
+    "github",
+    "karpathy-guidelines",
+    "context-engineering",
+    "spec-driven-development",
+    "test-driven-development",
+    "debugging-and-error-recovery",
+    "performance-optimization",
+    "documentation-and-adrs",
+    "adk-agent-builder",
+    "adk-architecture",
+    "adk-debug",
+    "adk-setup"
+  ]
+}
