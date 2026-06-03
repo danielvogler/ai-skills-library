@@ -7,11 +7,53 @@
       "skillPath": "skills/dbt/skills/adding-dbt-unit-test/SKILL.md",
       "computedHash": "f2c62f649bb045e00df5cb45bd7d5b8a9da43568b5b22d20ce5aae6d15604d81"
     },
+    "adk-agent-builder": {
+      "source": "google/adk-python",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/adk-agent-builder/SKILL.md",
+      "computedHash": "c18747a8596407166ac6a60405431ef5822d446167d1b9e58f1069b91c410c36"
+    },
+    "adk-architecture": {
+      "source": "google/adk-python",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/adk-architecture/SKILL.md",
+      "computedHash": "52938c51410ccc0864e0832cecf80e6cc9f3d17166481e946990c56d5ea66c77"
+    },
+    "adk-debug": {
+      "source": "google/adk-python",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/adk-debug/SKILL.md",
+      "computedHash": "b832cdcf1fff63a8c0a8afb5bcabf9415192f4f956f59d4435eab17b6f8d5912"
+    },
+    "adk-sample-creator": {
+      "source": "google/adk-python",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/adk-sample-creator/SKILL.md",
+      "computedHash": "9d7f8f2ca679ee8b9e65e468c7c4d24ac9a7109eb925bbe64c6d5935fcdb9acc"
+    },
+    "adk-setup": {
+      "source": "google/adk-python",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/adk-setup/SKILL.md",
+      "computedHash": "df5c883a8a2b2a5be364a027a86d3e93f870985a878929be1f03f3c232dfc5f9"
+    },
+    "adk-style": {
+      "source": "google/adk-python",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/adk-style/SKILL.md",
+      "computedHash": "03b4141acd3cdda9e2a7960b62376110458c9404c8cc6080e9516213954a7466"
+    },
     "answering-natural-language-questions-with-dbt": {
       "source": "dbt-labs/dbt-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/dbt/skills/answering-natural-language-questions-with-dbt/SKILL.md",
       "computedHash": "15cefed9def8313f8aec0f3b2c1ce575f544922841b1e6483c48bc4814654b3c"
+    },
+    "api-and-interface-design": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/api-and-interface-design/SKILL.md",
+      "computedHash": "3cf54553433e55875c664baf78f9c769820bdfac155f09bf2989d70e20e6e147"
     },
     "auditing-skills": {
       "source": "dbt-labs/dbt-agent-skills",
@@ -37,11 +79,77 @@
       "skillPath": "terraform/code-generation/skills/azure-verified-modules/SKILL.md",
       "computedHash": "271cfe2d6df59264827b1d158f542b15dd3eb25c90739e30fff8080b570299a9"
     },
+    "babysit-pr": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/babysit-pr/SKILL.md",
+      "computedHash": "90027320041892d6792c5fafe3f1ff3daea07892d3ce012d1d98302ffd5b7c8e"
+    },
+    "browser-testing-with-devtools": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/browser-testing-with-devtools/SKILL.md",
+      "computedHash": "d0c075ca4c9ffa50f7ddcd7cac140a2c809aba1be98d284b285539ebd4045be6"
+    },
     "building-dbt-semantic-layer": {
       "source": "dbt-labs/dbt-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/dbt/skills/building-dbt-semantic-layer/SKILL.md",
       "computedHash": "4815f71466efd7dfff8bc4f913ad0aacdf5882c9a57ef6ed0f4819503d96b2c4"
+    },
+    "ci-cd-and-automation": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ci-cd-and-automation/SKILL.md",
+      "computedHash": "578b098a7d2352ccdac8b8abdc40eb6803538e81cf8382f138da6188a655087c"
+    },
+    "code-breaking-changes": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/code-review-breaking-changes/SKILL.md",
+      "computedHash": "28dbaea41d4ded98fa5ade84bf1a68308c7957ad4d94080b53bdb97ce5a23728"
+    },
+    "code-review": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/code-review/SKILL.md",
+      "computedHash": "be8831712ae34d422c95bc02171e6ad4d82a1587fae0c0946a4e6ce4e7024ef3"
+    },
+    "code-review-and-quality": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/code-review-and-quality/SKILL.md",
+      "computedHash": "83931d7416bcff73c24d976c1e45f09f80259541d33e9fdfe3ee521d39b27428"
+    },
+    "code-review-change-size": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/code-review-change-size/SKILL.md",
+      "computedHash": "9e6fa46d69cc60b94d677cf7d7c9d4c37c414090b0be8bae429890dddac804c1"
+    },
+    "code-review-context": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/code-review-context/SKILL.md",
+      "computedHash": "5c16d8f5ee9cdbedc851662bb9415a652d23bc1527cea7c4baa0379690b71339"
+    },
+    "code-review-testing": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/code-review-testing/SKILL.md",
+      "computedHash": "1631e37fed8fb6923da02914e425e57a1b4eb64bdd496f5642ab54280a860657"
+    },
+    "code-simplification": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/code-simplification/SKILL.md",
+      "computedHash": "7973e746e8e2ea5004d520da970c15a106824b8d6be1bcff48908aec021f3677"
+    },
+    "codex-pr-body": {
+      "source": "openai/codex",
+      "sourceType": "github",
+      "skillPath": ".codex/skills/codex-pr-body/SKILL.md",
+      "computedHash": "9613c3e14f6b81c407db04a3389bd12046a7468a0b907d1cd22b57154073077c"
     },
     "configuring-dbt-mcp-server": {
       "source": "dbt-labs/dbt-agent-skills",
@@ -49,29 +157,59 @@
       "skillPath": "skills/dbt/skills/configuring-dbt-mcp-server/SKILL.md",
       "computedHash": "906621310b13d0094f9cf530abf2b38c36de2f15bcb361c1a073661430a8d6e4"
     },
+    "context-engineering": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/context-engineering/SKILL.md",
+      "computedHash": "bb8864454c5a24636cab86c4b3c4b29e7e7431c80485bfd7c9c0a19a01936510"
+    },
     "creating-mermaid-dbt-dag": {
       "source": "dbt-labs/dbt-agent-skills",
       "sourceType": "github",
       "skillPath": "skills/dbt-extras/skills/creating-mermaid-dbt-dag/SKILL.md",
       "computedHash": "df903c7b9fccc3ad1d4c4d17f3c5996e985d7e2058f1c42cd5b577070e5528be"
     },
+    "debugging-and-error-recovery": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/debugging-and-error-recovery/SKILL.md",
+      "computedHash": "0ca1c30d857089e10befc2386bb0b93b4eb9209eb104be80ade756c79dd45b0a"
+    },
     "deep-agents-core": {
       "source": "langchain-ai/langchain-skills",
       "sourceType": "github",
       "skillPath": "config/skills/deep-agents-core/SKILL.md",
-      "computedHash": "8cbf6f61f42b2482472f53a99e23607f16017e1e16ca037409c6c8fcfcbcc395"
+      "computedHash": "78899a8217572be9156b0c03f280fea7c250ce29e89a87fc18499766ec67159c"
     },
     "deep-agents-memory": {
       "source": "langchain-ai/langchain-skills",
       "sourceType": "github",
       "skillPath": "config/skills/deep-agents-memory/SKILL.md",
-      "computedHash": "b7b0facdff17b6f3ad77019e30a697175389e06ec7260780f49d5b3a1d28ad2a"
+      "computedHash": "54e4fd1e876f5e13bee1b52812a84befe00e8336c19d32766557fcb84c5ecf49"
     },
     "deep-agents-orchestration": {
       "source": "langchain-ai/langchain-skills",
       "sourceType": "github",
       "skillPath": "config/skills/deep-agents-orchestration/SKILL.md",
-      "computedHash": "1570f8d88e1233edc3306d28224604172b016aedba0ced2efa2dd8e38e28ae62"
+      "computedHash": "5b039d2c10ef3bd6f6044c70c123060860dc1e1a49c0dc5cc12dde7cd67a3b75"
+    },
+    "deprecation-and-migration": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/deprecation-and-migration/SKILL.md",
+      "computedHash": "ad5b7a0b67d5cd952aafd0069865c10c21e2f5fe179bfbc544e11b3c853953c2"
+    },
+    "documentation-and-adrs": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/documentation-and-adrs/SKILL.md",
+      "computedHash": "1c1b33b3c8ff1d5f9fdcf9d8a7a67f82384b3224e88af567fd4688f3f2d9e85b"
+    },
+    "doubt-driven-development": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/doubt-driven-development/SKILL.md",
+      "computedHash": "f6094460ebc9512285c85790e49f612081b9dd6a2b77d874fe2d960ef50a9ef1"
     },
     "fetching-dbt-docs": {
       "source": "dbt-labs/dbt-agent-skills",
@@ -79,23 +217,35 @@
       "skillPath": "skills/dbt/skills/fetching-dbt-docs/SKILL.md",
       "computedHash": "c1724483e3b82a88cdb76d984842f5373d3c46a1f72ed48f596521b25adecf57"
     },
+    "frontend-ui-engineering": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-ui-engineering/SKILL.md",
+      "computedHash": "917f6cf8c3d694c2b145463799ee492a2b88d7bf22ff479e08111d3ea5501e65"
+    },
     "gemini-api-dev": {
       "source": "google-gemini/gemini-skills",
       "sourceType": "github",
       "skillPath": "skills/gemini-api-dev/SKILL.md",
-      "computedHash": "1c430caa83ca215935a481cce6b8204a8b1c5e7af95e7930866c21254033d1df"
+      "computedHash": "e358693ab81864c2ed8fae87dd404ee41173e615f0d04834161cc1343bff1354"
     },
     "gemini-interactions-api": {
       "source": "google-gemini/gemini-skills",
       "sourceType": "github",
       "skillPath": "skills/gemini-interactions-api/SKILL.md",
-      "computedHash": "9d30f58e2e6a3cc6225d4b1c622ca6abfb2b86f662b581c7aa0791a1b25f2126"
+      "computedHash": "dec60481e9f1948b84904622f1444765eefba2809726893428c7c65c0cd435fc"
     },
     "gemini-live-api-dev": {
       "source": "google-gemini/gemini-skills",
       "sourceType": "github",
       "skillPath": "skills/gemini-live-api-dev/SKILL.md",
       "computedHash": "5cc49b0dcefb59b52577118a7898b51fa1913e1a7fd2986b5735796c3aa81030"
+    },
+    "git-workflow-and-versioning": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/git-workflow-and-versioning/SKILL.md",
+      "computedHash": "3e7b8cf28456abda4d7dc8cf95f0443f9ebb148dd00118361083a286d0916f90"
     },
     "github": {
       "source": "callstackincubator/agent-skills",
@@ -108,6 +258,24 @@
       "sourceType": "github",
       "skillPath": "skills/github-actions/SKILL.md",
       "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada"
+    },
+    "idea-refine": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/idea-refine/SKILL.md",
+      "computedHash": "926e51c45782a7a1074ee15558993966770e6c4ac52ea466a5de14638d151a12"
+    },
+    "incremental-implementation": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/incremental-implementation/SKILL.md",
+      "computedHash": "c9c35951841b2fb34cd7b64e1d318643ac6eebf74c419978280acc1bf690dd91"
+    },
+    "interview-me": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/interview-me/SKILL.md",
+      "computedHash": "efded91ac7f7626239b338ce8622afeb557151b86532b632f3c9eb5b2ff9048f"
     },
     "karpathy-guidelines": {
       "source": "forrestchang/andrej-karpathy-skills",
@@ -132,6 +300,18 @@
       "sourceType": "github",
       "skillPath": "terraform/provider-development/skills/new-terraform-provider/SKILL.md",
       "computedHash": "2f12647edea2705451301a24a864d71af4aa7758e8a8e977a1f95f83a297dc4a"
+    },
+    "performance-optimization": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/performance-optimization/SKILL.md",
+      "computedHash": "087baf94f788bd6a70ba8ec0aa0246f93808251fe2d24e1fd7a3df81896d2367"
+    },
+    "planning-and-task-breakdown": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/planning-and-task-breakdown/SKILL.md",
+      "computedHash": "6ee11641fc8d8f299a6acb3a10976e7e50719ad012290123e11ec34a525b4cc0"
     },
     "provider-actions": {
       "source": "hashicorp/agent-skills",
@@ -167,13 +347,13 @@
       "source": "callstackincubator/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-native-best-practices/SKILL.md",
-      "computedHash": "bad5e73a1c3ddca2ed4bcd93b05ff913e8f9cc5495feacc3717c69e07fee540f"
+      "computedHash": "15bd57b18d9ad0dcd003bd2c7ec6ed17d813cc671dd4d423e1d904d2a7b9d2bb"
     },
     "react-native-brownfield-migration": {
       "source": "callstackincubator/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/react-native-brownfield-migration/SKILL.md",
-      "computedHash": "ad7f024fa1adf831f8f9bfdc31da5bb820b8d2dc8f9e55147b558a0ea2b3c555"
+      "computedHash": "06fd211ff8a28733f0d82853361ed7ab6e215aba18593e2195aebebea33f9c26"
     },
     "refactor-module": {
       "source": "hashicorp/agent-skills",
@@ -193,6 +373,30 @@
       "skillPath": "skills/dbt/skills/running-dbt-commands/SKILL.md",
       "computedHash": "d5fd3d0958a5c647ee0235d244cea7c7ce0ffe05b4d51d560f52196f65b6820f"
     },
+    "security-and-hardening": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/security-and-hardening/SKILL.md",
+      "computedHash": "5ab0ca195c66406f3bddefb0c97468f2eb717232e4ffced8628f5d921707e281"
+    },
+    "shipping-and-launch": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/shipping-and-launch/SKILL.md",
+      "computedHash": "3cd9f8154c7aa578cf7db15c43b54e358bbe7da03c633d289b0302acf4a83028"
+    },
+    "source-driven-development": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/source-driven-development/SKILL.md",
+      "computedHash": "235fb43569e9b21ec5d209818ff1ad3da9682be33c4e464ffa89ed348e7094a0"
+    },
+    "spec-driven-development": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/spec-driven-development/SKILL.md",
+      "computedHash": "c29c9fe28235431984e1f8d5f5a578fc03184d6da17131574f16b240f7c93c3f"
+    },
     "terraform-search-import": {
       "source": "hashicorp/agent-skills",
       "sourceType": "github",
@@ -203,7 +407,7 @@
       "source": "antonbabenko/terraform-skill",
       "sourceType": "github",
       "skillPath": "skills/terraform-skill/SKILL.md",
-      "computedHash": "3b3960662078426253aeee325b58c998127f48decd70636d6344d399f1d3d3c6"
+      "computedHash": "722acac542a5f0dafe69c3b1070eadc358453396d8e3f73e5430cf40c0eea538"
     },
     "terraform-stacks": {
       "source": "hashicorp/agent-skills",
@@ -223,6 +427,12 @@
       "skillPath": "terraform/code-generation/skills/terraform-test/SKILL.md",
       "computedHash": "c446a090ac98bea46704c16003761a030e6aa56a27b0e95d6914fbdb7c1d2a23"
     },
+    "test-driven-development": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/test-driven-development/SKILL.md",
+      "computedHash": "2a541c517efcf3ebc1c0fb8cb644bab1690724fb9d2f67bb6d075d6a73876ba8"
+    },
     "troubleshooting-dbt-job-errors": {
       "source": "dbt-labs/dbt-agent-skills",
       "sourceType": "github",
@@ -233,7 +443,13 @@
       "source": "callstackincubator/agent-skills",
       "sourceType": "github",
       "skillPath": "skills/upgrading-react-native/SKILL.md",
-      "computedHash": "3a0fba5f03d67fbea03a915e34f2cee1397fb2968e7273dd3a5b4391df4250a6"
+      "computedHash": "a8a0b9ce54dceb45233c3244dfe9aafc43f3cb9f4dad8c466f4091fe4065cdc9"
+    },
+    "using-agent-skills": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/using-agent-skills/SKILL.md",
+      "computedHash": "c6626f8f65808382750cba741c4fc4fdcad132e23d1ecf871deffe34f2ecf996"
     },
     "using-dbt-for-analytics-engineering": {
       "source": "dbt-labs/dbt-agent-skills",

@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "description": "Skills for React Native and mobile frontend teams.",
+  "skills": [
+    "react-native-best-practices",
+    "react-native-brownfield-migration",
+    "upgrading-react-native",
+    "github",
+    "github-actions",
+    "karpathy-guidelines",
+    "frontend-ui-engineering",
+    "browser-testing-with-devtools",
+    "performance-optimization",
+    "debugging-and-error-recovery",
+    "git-workflow-and-versioning",
+    "code-review",
+    "code-review-testing"
+  ]
+}

@@ -1,0 +1,36 @@
+name: Skill Bug Report
+description: Report an error, outdated example, or quality issue in an existing skill
+labels: ["bug"]
+body:
+  - type: input
+    id: skill-name
+    attributes:
+      label: Skill name
+      description: The exact name as it appears in `.claude/skills/`
+      placeholder: running-dbt-commands
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Describe the incorrect behaviour, outdated command, or misleading instruction
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say or do instead?
+      description: Include corrected commands or instructions if you know them
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Tool versions, OS, or other details that help reproduce the issue
+    validations:
+      required: false

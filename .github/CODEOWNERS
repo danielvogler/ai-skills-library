@@ -1,0 +1,5 @@
+# Default owner for everything
+* @danielvogler
+
+# Profiles require owner review — they affect every team's install
+profiles/ @danielvogler
