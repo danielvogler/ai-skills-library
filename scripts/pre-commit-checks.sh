@@ -21,8 +21,16 @@ markdownlint-cli2 --config .markdownlint.json $DOCS
 echo "→ GitHub Actions lint"
 actionlint .github/workflows/*.yml
 
-echo "→ README staged check"
 staged=$(git diff --cached --name-only)
+
+echo "→ full-stack profile sync"
+if echo "$staged" | grep -q 'skills-lock\.json'; then
+  bash scripts/generate-full-stack.sh
+  git add profiles/full-stack.json
+  echo "  Auto-staged profiles/full-stack.json"
+fi
+
+echo "→ README staged check"
 if echo "$staged" | grep -qE 'skills-lock\.json|\.claude/skills/'; then
   if ! echo "$staged" | grep -q 'README\.md'; then
     echo ""

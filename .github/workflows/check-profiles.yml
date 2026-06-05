@@ -32,17 +32,16 @@ jobs:
           done
           exit $failed
 
-      - name: Check full-stack profile is complete
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check full-stack profile is in sync with skills-lock.json
         run: |
-          all_skills=$(ls .claude/skills/)
-          fullstack_skills=$(jq -r '.skills[]' profiles/full-stack.json)
-          missing=0
-          for skill in $all_skills; do
-            if ! echo "$fullstack_skills" | grep -q "^${skill}$"; then
-              echo "::warning::Skill '$skill' is missing from profiles/full-stack.json"
-              missing=1
-            fi
-          done
-          if [ $missing -eq 1 ]; then
-            echo "Update full-stack.json to include all skills."
+          bash scripts/generate-full-stack.sh
+          if ! git diff --exit-code profiles/full-stack.json; then
+            echo ""
+            echo "::error::profiles/full-stack.json is out of sync with skills-lock.json."
+            echo "Run scripts/generate-full-stack.sh locally and commit the result."
+            exit 1
           fi
