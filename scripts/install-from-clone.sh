@@ -10,11 +10,17 @@
 # installs from the local clone instead — which the CLI handles correctly.
 #
 # Usage:
-#   ./scripts/install-from-clone.sh --skill terraform-skill
+#   ./scripts/install-from-clone.sh --skill terraform-skill --agent claude-code
 #   ./scripts/install-from-clone.sh --skill terraform-skill terraform-test --agent cursor
 #   ./scripts/install-from-clone.sh --list
 #
 # Any arguments are passed through to `npx skills add`.
+#
+# IMPORTANT: always pass --agent explicitly. If you omit it, the CLI
+# auto-detects the agent you're running in and installs to every "universal"
+# agent directory it knows about (15+ agents) plus the detected one, instead
+# of just the one you want — there's no interactive agent picker once the CLI
+# detects an agent context.
 
 set -euo pipefail
 

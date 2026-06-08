@@ -19,8 +19,8 @@ Every skill's provenance and content hash is tracked in `skills-lock.json`.
 ## Quick install
 
 ```bash
-# Claude Code (default)
-npx skills add danielvogler/ai-skills-library --skill terraform-skill
+# Claude Code — always pass --agent explicitly (see note below)
+npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent claude-code
 
 # Cursor
 npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cursor
@@ -46,6 +46,15 @@ npx skills add danielvogler/ai-skills-library --list
 > direct GitHub installs from this repo to fail — see
 > [Troubleshooting: install fails with "No valid skills found"](#troubleshooting-install-fails-with-no-valid-skills-found)
 > for a one-line workaround.
+>
+> **Always pass `--agent` explicitly.** If you omit it, the `skills` CLI
+> auto-detects the coding agent you're currently running in and silently
+> expands the install target to every "universal" agent directory it knows
+> about (Antigravity, Gemini CLI, Amp, Cline, and a dozen more) *in addition*
+> to the one you're using — not just the single agent you expected. There is
+> no interactive "pick an agent" prompt when the CLI detects it's running
+> inside an agent; it installs everywhere non-interactively. Passing
+> `--agent <name>` (e.g. `--agent claude-code`) installs to that agent only.
 
 ---
 
