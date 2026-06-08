@@ -279,7 +279,7 @@ npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cu
 
 If `npx skills add danielvogler/ai-skills-library --skill <name>` fails with:
 
-```
+```text
 No valid skills found. Skills require a SKILL.md with name and description.
 ```
 
