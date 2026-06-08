@@ -42,6 +42,11 @@ curl -sL https://raw.githubusercontent.com/danielvogler/ai-skills-library/main/s
 npx skills add danielvogler/ai-skills-library --list
 ```
 
+> **Seeing "No valid skills found"?** A known bug in the `npx skills` CLI causes
+> direct GitHub installs from this repo to fail — see
+> [Troubleshooting: install fails with "No valid skills found"](#troubleshooting-install-fails-with-no-valid-skills-found)
+> for a one-line workaround.
+
 ---
 
 ## Team Profiles
@@ -267,6 +272,42 @@ npx skills add danielvogler/ai-skills-library --skill terraform-skill -g
 # Target a different agent
 npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cursor
 ```
+
+---
+
+## Troubleshooting: install fails with "No valid skills found"
+
+If `npx skills add danielvogler/ai-skills-library --skill <name>` fails with:
+
+```
+No valid skills found. Skills require a SKILL.md with name and description.
+```
+
+this is a known bug in the upstream `skills` CLI, not a problem with the skill
+name you picked. The CLI reads this repo's own provenance manifest
+(`skills-lock.json`) and mistakes it for the *target* project's "already
+installed" lock — since the manifest lists every skill in the library by name,
+the CLI concludes all of them are already installed and filters every single
+one out, regardless of which `--skill` you asked for.
+
+**Workaround — install from a local clone instead:**
+
+```bash
+./scripts/install-from-clone.sh --skill terraform-skill
+```
+
+(Run from a clone of this repo, or fetch and run the script directly:)
+
+```bash
+curl -sL https://raw.githubusercontent.com/danielvogler/ai-skills-library/main/scripts/install-from-clone.sh \
+  | bash -s -- --skill terraform-skill
+```
+
+The script clones this repo to a temp directory, removes the colliding
+`skills-lock.json` from that throwaway copy (the real one in this repo is
+untouched), and installs from the local clone — which the CLI handles
+correctly. Any flags you'd normally pass to `npx skills add` (`--agent`, `-g`,
+multiple `--skill` names, `--list`, etc.) work the same way here.
 
 ---
 

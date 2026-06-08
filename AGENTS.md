@@ -69,6 +69,14 @@ npx skills add danielvogler/ai-skills-library --skill karpathy-guidelines -g
 npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cursor
 ```
 
+> **Known issue:** direct GitHub installs from this repo currently fail with
+> `No valid skills found` — the `skills` CLI misreads our own
+> `skills-lock.json` as the target project's "already installed" lock and
+> filters out every skill. Use `./scripts/install-from-clone.sh --skill <name>`
+> instead (see the README's [Troubleshooting](README.md#troubleshooting-install-fails-with-no-valid-skills-found)
+> section for details). This is an upstream CLI bug, not a problem with the
+> skill names in this repo.
+
 ---
 
 ## Commit convention
