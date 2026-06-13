@@ -19,8 +19,8 @@ Every skill's provenance and content hash is tracked in `skills-lock.json`.
 ## Quick install
 
 ```bash
-# Claude Code (default)
-npx skills add danielvogler/ai-skills-library --skill terraform-skill
+# Claude Code — always pass --agent explicitly (see note below)
+npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent claude-code
 
 # Cursor
 npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cursor
@@ -41,6 +41,20 @@ curl -sL https://raw.githubusercontent.com/danielvogler/ai-skills-library/main/s
 # List all available skills without installing
 npx skills add danielvogler/ai-skills-library --list
 ```
+
+> **Seeing "No valid skills found"?** A known bug in the `npx skills` CLI causes
+> direct GitHub installs from this repo to fail — see
+> [Troubleshooting: install fails with "No valid skills found"](#troubleshooting-install-fails-with-no-valid-skills-found)
+> for a one-line workaround.
+>
+> **Always pass `--agent` explicitly.** If you omit it, the `skills` CLI
+> auto-detects the coding agent you're currently running in and silently
+> expands the install target to every "universal" agent directory it knows
+> about (Antigravity, Gemini CLI, Amp, Cline, and a dozen more) *in addition*
+> to the one you're using — not just the single agent you expected. There is
+> no interactive "pick an agent" prompt when the CLI detects it's running
+> inside an agent; it installs everywhere non-interactively. Passing
+> `--agent <name>` (e.g. `--agent claude-code`) installs to that agent only.
 
 ---
 
@@ -267,6 +281,42 @@ npx skills add danielvogler/ai-skills-library --skill terraform-skill -g
 # Target a different agent
 npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cursor
 ```
+
+---
+
+## Troubleshooting: install fails with "No valid skills found"
+
+If `npx skills add danielvogler/ai-skills-library --skill <name>` fails with:
+
+```text
+No valid skills found. Skills require a SKILL.md with name and description.
+```
+
+this is a known bug in the upstream `skills` CLI, not a problem with the skill
+name you picked. The CLI reads this repo's own provenance manifest
+(`skills-lock.json`) and mistakes it for the *target* project's "already
+installed" lock — since the manifest lists every skill in the library by name,
+the CLI concludes all of them are already installed and filters every single
+one out, regardless of which `--skill` you asked for.
+
+**Workaround — install from a local clone instead:**
+
+```bash
+./scripts/install-from-clone.sh --skill terraform-skill
+```
+
+(Run from a clone of this repo, or fetch and run the script directly:)
+
+```bash
+curl -sL https://raw.githubusercontent.com/danielvogler/ai-skills-library/main/scripts/install-from-clone.sh \
+  | bash -s -- --skill terraform-skill
+```
+
+The script clones this repo to a temp directory, removes the colliding
+`skills-lock.json` from that throwaway copy (the real one in this repo is
+untouched), and installs from the local clone — which the CLI handles
+correctly. Any flags you'd normally pass to `npx skills add` (`--agent`, `-g`,
+multiple `--skill` names, `--list`, etc.) work the same way here.
 
 ---
 

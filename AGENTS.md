@@ -51,9 +51,10 @@ gh auth login
 ## Using skills in another project
 
 ```bash
-# Install a single skill into a project
+# Install a single skill into a project — always pass --agent explicitly
+# (see "Known issue" notes below for why)
 cd ~/work/my-project
-npx skills add danielvogler/ai-skills-library --skill terraform-skill
+npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent claude-code
 
 # Install a curated team profile (see profiles/ directory)
 curl -sL https://raw.githubusercontent.com/danielvogler/ai-skills-library/main/scripts/install-profile.sh \
@@ -68,6 +69,21 @@ npx skills add danielvogler/ai-skills-library --skill karpathy-guidelines -g
 # Target a specific agent (Cursor, etc.)
 npx skills add danielvogler/ai-skills-library --skill terraform-skill --agent cursor
 ```
+
+> **Known issue:** direct GitHub installs from this repo currently fail with
+> `No valid skills found` — the `skills` CLI misreads our own
+> `skills-lock.json` as the target project's "already installed" lock and
+> filters out every skill. Use `./scripts/install-from-clone.sh --skill <name>`
+> instead (see the README's [Troubleshooting](README.md#troubleshooting-install-fails-with-no-valid-skills-found)
+> section for details). This is an upstream CLI bug, not a problem with the
+> skill names in this repo.
+>
+> **Always pass `--agent` explicitly.** Omitting it lets the `skills` CLI
+> auto-detect the agent you're running in and silently install to every
+> "universal" agent directory it knows about (15+ agents) *plus* the detected
+> one — there's no interactive agent picker once the CLI detects it's running
+> inside an agent. `--agent claude-code` (or `cursor`, `opencode`, `gemini`,
+> etc.) restricts the install to exactly the agent you name.
 
 ---
 
